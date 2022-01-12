@@ -134,10 +134,10 @@ const allElement = [
 	}
 ];
 
-let container = document.querySelector(".container");
-let select = document.getElementById("select-type");
+let container = document.querySelector(".container");   // Seleziona il container dove creare i box
+let select = document.getElementById("select-type");	// Seleziona l'elemento dovre scegliere le icone
 
-for (let i = 0; i < allElement.length; i++) {
+for (let i = 0; i < allElement.length; i++) {			// Stampa i box utilizzando la funzione
 	container.innerHTML += boxIcon(allElement[i]);
 }
 
@@ -158,7 +158,7 @@ let user = allElement.filter((element) => {
 });
 
 
-select.addEventListener('change', function() {
+select.addEventListener('change', function() {				// Mostra le icone in base alla selezione effettuata
 	if (select.value == "all") {
 		container.innerHTML = "";
 		allElement.forEach((element) => {
@@ -184,7 +184,7 @@ select.addEventListener('change', function() {
 );
 
 
-function boxIcon(card){
+function boxIcon(card){				// Funzione per stampare i box
 	let cardbox = `
 		<div class="box">
 			<i class="${card.family} ${card.prefix}${card.name} icon" style="color:${card.color}"></i>
