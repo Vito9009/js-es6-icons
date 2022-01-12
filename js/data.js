@@ -159,7 +159,7 @@ let user = allElement.filter((element) => {
 
 
 select.addEventListener('change', function() {				// Mostra le icone in base alla selezione effettuata
-	if (select.value == "all") {
+	if (select.value == "all") {							// Value in HTML
 		container.innerHTML = "";
 		allElement.forEach((element) => {
 			container.innerHTML += boxIcon(element);
