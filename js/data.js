@@ -135,19 +135,60 @@ const allElement = [
 ];
 
 let container = document.querySelector(".container");
-
+let select = document.getElementById("select-type");
 
 for (let i = 0; i < allElement.length; i++) {
 	container.innerHTML += boxIcon(allElement[i]);
 }
 
+//FILTER
+
+let animal = allElement.filter((element) => {
+	return element.type == "animal";
+});
+
+
+let vegetable = allElement.filter((element) => {
+	return element.type == "vegetable";
+});
+
+
+let user = allElement.filter((element) => {
+	return element.type == "user";
+});
+
+
+select.addEventListener('change', function() {
+	if (select.value == "all") {
+		container.innerHTML = "";
+		allElement.forEach((element) => {
+			container.innerHTML += boxIcon(element);
+		});
+	}else if (select.value == "animal") {
+		container.innerHTML = "";
+		animal.forEach((element) => {
+			container.innerHTML += boxIcon(element);
+		});
+	}else if (select.value == "vegetable") {
+		container.innerHTML = "";
+		vegetable.forEach((element) => {
+			container.innerHTML += boxIcon(element);
+		});
+	}else if (select.value == "user") {
+		container.innerHTML = "";
+		user.forEach((element) => {
+			container.innerHTML += boxIcon(element);
+		});
+}
+}
+);
 
 
 function boxIcon(card){
 	let cardbox = `
 		<div class="box">
-			<i class="${card.family} ${card.prefix}${card.name}" style="color:${card.color}"></i>
-			<h4 class="text-icon">${card.name}</h4>
+			<i class="${card.family} ${card.prefix}${card.name} icon" style="color:${card.color}"></i>
+			<h5 class="text-icon">${card.name}</h4>
 		</div>
 
 		`;

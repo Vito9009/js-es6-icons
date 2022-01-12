@@ -34,17 +34,22 @@ body{
 }
 
 .box{
-    height: 80px;
-    width: 120px;
+    height: 100px;
+    width: 150px;
     background-color: rgb(255, 255, 255);
     margin: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    text-align: center;
 }
 
-.icon, .text-icon{
-    margin: 10px;
+.icon{
+    font-size: 30px;
+}
+
+.text-icon{
+    text-transform: uppercase;
 }
