@@ -133,3 +133,24 @@ const allElement = [
 		color: 'blue'
 	}
 ];
+
+let container = document.querySelector(".container");
+
+
+for (let i = 0; i < allElement.length; i++) {
+	container.innerHTML += boxIcon(allElement[i]);
+}
+
+
+
+function boxIcon(card){
+	let cardbox = `
+		<div class="box">
+			<i class="${card.family} ${card.prefix}${card.name}" style="color:${card.color}"></i>
+			<h4 class="text-icon">${card.name}</h4>
+		</div>
+
+		`;
+	
+		return cardbox;
+}
